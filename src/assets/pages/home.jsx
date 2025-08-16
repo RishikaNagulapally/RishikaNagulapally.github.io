@@ -5,7 +5,7 @@ export default function AboutMe() {
   return (
     <section
       id="home"
-      className="bg-black text-gray-200 px-4 sm:px-6 py-16 mt-24 rounded-3xl max-w-4xl mx-auto shadow-lg border border-orange-600/20"
+      className="bg-black text-gray-200 px-4 sm:px-6 py-16 rounded-3xl max-w-4xl mx-auto shadow-lg border border-orange-600/20"
     >
       {/* Profile Image */}
       <div className="relative w-full flex justify-center mb-10">
@@ -58,7 +58,6 @@ export default function AboutMe() {
 
       {/* Action Buttons */}
       <div className="flex justify-center gap-4 flex-wrap mb-10">
-        {/* ✅ Download CV */}
         <a
           href="/rishika.pdf"
           download="rishika.pdf"
@@ -67,7 +66,6 @@ export default function AboutMe() {
           ⬇️ Download CV
         </a>
 
-        {/* ✅ Projects */}
         <a
           href="#projects"
           className="bg-gray-800 text-white text-sm sm:text-base px-6 py-2.5 rounded-full font-medium shadow-md hover:bg-gray-700 transition-all duration-300"

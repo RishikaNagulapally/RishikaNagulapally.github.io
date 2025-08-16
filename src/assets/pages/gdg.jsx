@@ -9,7 +9,8 @@ import img5 from "@/assets/gdg/img5.jpg";
 import img6 from "@/assets/gdg/img6.jpg";
 import img7 from "@/assets/gdg/img7.jpg";
 import img8 from "@/assets/gdg/img8.jpg";
-const images = [img1, img2, img3, img4,img8, img7,img6, img5,];
+
+const images = [img1, img2, img3, img4, img8, img7, img6, img5];
 
 export default function GDG() {
   const [index, setIndex] = useState(0);
@@ -23,16 +24,14 @@ export default function GDG() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white px-4 py-10 mt-20 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-pink-400 via-violet-500 to-pink-400 bg-clip-text text-transparent">
-
+    <div className="min-h-screen bg-black text-white px-4 py-8 sm:py-16 flex flex-col items-center justify-center">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold text-center text-white mb-4 sm:mb-8">
+        GDG Gallery!
       </h1>
-      <p className="mt-4 text-lg text-center text-gray-300 max-w-2xl">
-
-      </p>
 
       {/* Carousel Section */}
-      <div className="relative mt-12 w-full max-w-3xl h-[300px] sm:h-auto sm:aspect-[4/3] overflow-hidden rounded-lg">
+      <div className="relative w-full max-w-3xl h-[300px] sm:h-[400px] sm:aspect-[4/3] overflow-hidden rounded-lg">
         <AnimatePresence initial={false} mode="wait">
           <motion.img
             key={images[index]}
@@ -62,7 +61,7 @@ export default function GDG() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-4 sm:mt-6">
         {images.map((_, i) => (
           <div
             key={i}

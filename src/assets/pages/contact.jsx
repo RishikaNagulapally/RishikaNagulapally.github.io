@@ -12,7 +12,7 @@ export default function ContactFooter() {
   return (
     <footer
       id="contact"
-      className="bg-black text-white py-12 px-6 mt-20 mb-20 sm:mb-0"
+      className="bg-black text-white py-12 px-6" // Removed mt-20 mb-20
     >
       <div className="max-w-4xl mx-auto">
         {/* --- Desktop & Tablet View --- */}

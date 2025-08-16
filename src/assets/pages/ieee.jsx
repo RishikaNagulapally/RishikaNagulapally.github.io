@@ -1,4 +1,3 @@
-// ieee.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import img1 from "@/assets/ieee/img1.jpg";
@@ -18,17 +17,14 @@ export default function IEEE() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white px-4 py-8 mt-20">
- <h1 className="text-4xl font-bold text-center text-white">
-  {/* Optionally add a heading here */}
-</h1>
-<p className="mt-4 text-lg text-center text-white-400">
-
-</p>
-
+    <div className="min-h-screen bg-black text-white px-4 py-8 flex flex-col items-center justify-center">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold text-center text-white mb-6">
+        IEEE Gallery!
+      </h1>
 
       {/* Carousel Section */}
-      <div className="relative mt-12 mx-auto max-w-3xl overflow-hidden rounded-xl shadow-xl border border-pink-500">
+      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-xl">
         <AnimatePresence initial={false} mode="wait">
           <motion.img
             key={images[index]}

@@ -8,7 +8,6 @@ import img4 from "../hackathon/img4.png";
 import img5 from "../hackathon/img5.png";
 import img6 from "../hackathon/img6.jpg";
 import img7 from "../hackathon/img7.jpg";
-import img8 from "../hackathon/img8.jpg";
 import img9 from "../hackathon/img9.jpg";
 import img10 from "../hackathon/img10.jpg";
 import img11 from "../hackathon/img11.jpg";
@@ -19,7 +18,7 @@ export default function Hack() {
         <HackSection
         title="Vyoma-24Hr National Level Hackthon"
         description="A Hackathon organized by BVRIT on 29th Jul 2025. This is a prototype of an AI-powered learning website that features a dedicated chatbot developed by us. The website contains all the essential resources to learn AI, including projects based on it to help users improve their skills."
-        images={[ img6, img7, img8,img9, img10, img11]}
+        images={[ img7,img6,img9,img10,img11]}
         githubLink="https://github.com/Advaitkasturi/LearnMatrix-vyoma-national-level-hackthon-"
       />
 
