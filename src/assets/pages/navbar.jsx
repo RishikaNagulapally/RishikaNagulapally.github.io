@@ -108,22 +108,20 @@ export default function Navbar() {
 
         {/* Dropdown Menu */}
         {isOpen && (
-          <div className="flex flex-col space-y-2 px-4 pb-4 bg-black border-t border-gray-800">
+          <div
+            className="flex flex-col space-y-2 px-4 pb-4 border-t border-gray-800"
+            style={{ backgroundColor: "#000" }} // pitch black
+          >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(link.name, link.href, e)}
-                className={`flex items-center space-x-2 text-gray-300 font-medium transition duration-200
+                className={`text-gray-300 font-medium transition duration-200
                   hover:text-orange-400
-                  ${
-                    active === link.name
-                      ? "text-orange-500 drop-shadow-[0_0_6px_rgba(255,140,0,0.7)]"
-                      : ""
-                  }
+                  ${active === link.name ? "text-orange-500 drop-shadow-[0_0_6px_rgba(255,140,0,0.7)]" : ""}
                 `}
               >
-                {link.icon}
                 <span>{link.name}</span>
                 {active === link.name && (
                   <span className="ml-1 text-orange-500 font-mono text-sm select-none">
