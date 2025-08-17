@@ -27,7 +27,7 @@ export default function GDG() {
     <div className="min-h-screen bg-black text-white px-4 py-8 sm:py-16 flex flex-col items-center justify-center">
       {/* Heading */}
       <h1 className="text-4xl font-bold text-center text-white mb-4 sm:mb-8">
-        GDG Gallery!
+      
       </h1>
 
       {/* Carousel Section */}

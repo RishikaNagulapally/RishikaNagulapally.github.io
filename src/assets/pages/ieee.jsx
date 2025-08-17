@@ -20,7 +20,7 @@ export default function IEEE() {
     <div className="min-h-screen bg-black text-white px-4 py-8 flex flex-col items-center justify-center">
       {/* Heading */}
       <h1 className="text-4xl font-bold text-center text-white mb-6">
-        IEEE Gallery!
+      
       </h1>
 
       {/* Carousel Section */}
