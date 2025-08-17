@@ -23,12 +23,17 @@ export default function HackSection({ title, description, images, githubLink }) 
   return (
     <section className="px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col items-center">
       {/* Title */}
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-pink-500 via-violet-500 to-orange-400 text-transparent bg-clip-text mb-4">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold 
+                     bg-gradient-to-r from-pink-500 via-violet-500 to-orange-400 
+                     text-transparent bg-clip-text mb-4 
+                     text-left sm:text-center w-full sm:w-auto">
         {title}
       </h2>
 
       {/* Description */}
-      <p className="text-gray-300 text-sm sm:text-base md:text-lg text-center max-w-3xl mb-8 leading-relaxed tracking-wide">
+      <p className="text-gray-300 text-sm sm:text-base md:text-lg 
+                    max-w-3xl mb-8 leading-relaxed tracking-wide
+                    text-left sm:text-center w-full sm:w-auto">
         {description}
       </p>
 

@@ -75,11 +75,7 @@ export default function Navbar() {
                 className={`relative flex items-center text-lg font-semibold text-gray-300 cursor-pointer
                   transition duration-300 ease-in-out transform
                   hover:text-orange-400 hover:scale-105 focus:text-orange-400
-                  ${
-                    active === link.name
-                      ? "text-orange-500 drop-shadow-[0_0_6px_rgba(255,140,0,0.7)] scale-105"
-                      : ""
-                  }
+                  ${active === link.name ? "text-orange-500 drop-shadow-[0_0_6px_rgba(255,140,0,0.7)] scale-105" : ""}
                 `}
               >
                 {link.name}
@@ -108,10 +104,7 @@ export default function Navbar() {
 
         {/* Dropdown Menu */}
         {isOpen && (
-          <div
-            className="flex flex-col space-y-2 px-4 pb-4 border-t border-gray-800"
-            style={{ backgroundColor: "#000" }} // pitch black
-          >
+          <div className="flex flex-col space-y-2 px-4 pb-4 bg-black">
             {navLinks.map((link) => (
               <a
                 key={link.name}

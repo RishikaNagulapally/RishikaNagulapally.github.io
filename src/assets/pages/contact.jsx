@@ -10,10 +10,7 @@ import {
 
 export default function ContactFooter() {
   return (
-    <footer
-      id="contact"
-      className="bg-black text-white py-12 px-6" // Removed mt-20 mb-20
-    >
+    <footer id="contact" className="bg-black text-white py-12 px-6">
       <div className="max-w-4xl mx-auto">
         {/* --- Desktop & Tablet View --- */}
         <div className="hidden sm:block">
@@ -102,15 +99,15 @@ export default function ContactFooter() {
 
         {/* --- Mobile View --- */}
         <div className="block sm:hidden">
-          <h2 className="text-2xl font-bold mb-5 text-center px-4">
+          <h2 className="text-2xl font-bold mb-5 px-4 text-left">
             Let's Connect 🤝
           </h2>
 
-          <p className="text-gray-300 text-sm mb-8 px-6 text-center leading-relaxed">
+          <p className="text-gray-300 text-sm mb-8 px-4 text-left leading-relaxed">
             Whether you have a question, want to collaborate, or just say hi — my inbox is always open!
           </p>
 
-          <div className="flex flex-col gap-4 mb-8 px-6">
+          <div className="flex flex-col gap-4 mb-8 px-4">
             <a
               href="mailto:rishikareddynagulapally@gmail.com"
               className="bg-white text-black py-3 rounded-full font-semibold shadow-md hover:bg-gray-200 transition duration-300 text-center w-full"
@@ -125,7 +122,7 @@ export default function ContactFooter() {
             </a>
           </div>
 
-          <div className="flex justify-center gap-6 text-4xl mb-8 px-6">
+          <div className="flex justify-center gap-6 text-4xl mb-8 px-4">
             <a
               href="https://www.linkedin.com/in/rishika-reddy-9744a7298/"
               target="_blank"
@@ -180,8 +177,9 @@ export default function ContactFooter() {
             </a>
           </div>
 
-          <p className="text-center text-sm text-gray-400 select-none px-6">
-            © {new Date().getFullYear()} Rishika.
+          {/* Centered Name and Year */}
+          <p className="text-center text-sm text-gray-400 select-none">
+            © {new Date().getFullYear()} Rishika
           </p>
         </div>
       </div>

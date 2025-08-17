@@ -5,7 +5,7 @@ export default function AboutMe() {
   return (
     <section
       id="home"
-      className="bg-black text-gray-200 px-4 sm:px-6 py-16 rounded-3xl max-w-4xl mx-auto shadow-lg border border-orange-600/20"
+      className="bg-black text-gray-200 px-4 sm:px-6 py-16 rounded-3xl max-w-4xl mx-auto shadow-lg"
     >
       {/* Profile Image */}
       <div className="relative w-full flex justify-center mb-10">
