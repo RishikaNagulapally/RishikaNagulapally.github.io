@@ -6,7 +6,7 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const [active, setActive] = useState("Home");
-  const [isOpen, setIsOpen] = useState(false); // for mobile dropdown
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "#home", icon: <User size={20} /> },
@@ -17,44 +17,61 @@ export default function Navbar() {
     { name: "The Competitive Edge", href: "/hack", icon: <Code size={20} /> },
   ];
 
+  /* ===================== SCROLL SPY ===================== */
   useEffect(() => {
-    const hash = location.hash ? location.hash.substring(1) : null;
-    const pathname = location.pathname;
+    if (location.pathname !== "/") return;
 
-    if (pathname === "/hack") {
+    const sectionIds = navLinks
+      .filter((l) => l.href.startsWith("#"))
+      .map((l) => l.href.substring(1));
+
+    const onScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sectionIds[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          const activeLink = navLinks.find(
+            (l) => l.href === `#${sectionIds[i]}`
+          );
+          if (activeLink) setActive(activeLink.name);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [location.pathname]);
+
+  /* ===================== ROUTE CHANGE ===================== */
+  useEffect(() => {
+    if (location.pathname === "/hack") {
       setActive("The Competitive Edge");
-    } else if (hash) {
-      const found = navLinks.find((link) =>
-        link.href.toLowerCase().includes(`#${hash.toLowerCase()}`)
-      );
-      setActive(found ? found.name : "Home");
-    } else {
-      setActive("Home");
     }
-  }, [location]);
+  }, [location.pathname]);
 
-  const handleLinkClick = async (name, href, e) => {
+  const handleLinkClick = (name, href, e) => {
     e.preventDefault();
     setActive(name);
-    setIsOpen(false); // close dropdown on mobile after click
+    setIsOpen(false);
 
     if (href.startsWith("#")) {
       const targetId = href.slice(1);
 
       if (location.pathname !== "/") {
         navigate("/", { replace: false });
-
         setTimeout(() => {
-          const targetElement = document.getElementById(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 100);
+          document
+            .getElementById(targetId)
+            ?.scrollIntoView({ behavior: "smooth" });
+        }, 120);
       } else {
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: "smooth" });
-        }
+        document
+          .getElementById(targetId)
+          ?.scrollIntoView({ behavior: "smooth" });
       }
     } else {
       navigate(href);
@@ -63,24 +80,26 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Desktop Navbar */}
+      {/* ================= DESKTOP NAVBAR ================= */}
       <nav className="hidden md:flex fixed top-0 left-0 w-full z-50 bg-black px-12 py-5 shadow-lg">
-        <div className="flex justify-center items-center max-w-6xl mx-auto">
-          <div className="flex space-x-20 relative">
+        <div className="flex justify-center max-w-6xl mx-auto">
+          <div className="flex space-x-20">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(link.name, link.href, e)}
-                className={`relative flex items-center text-lg font-semibold text-gray-300 cursor-pointer
-                  transition duration-300 ease-in-out transform
-                  hover:text-orange-400 hover:scale-105 focus:text-orange-400
-                  ${active === link.name ? "text-orange-500 drop-shadow-[0_0_6px_rgba(255,140,0,0.7)] scale-105" : ""}
-                `}
+                className={`relative text-lg font-semibold transition duration-300 ease-in-out
+                  hover:text-orange-400 hover:scale-105
+                  ${
+                    active === link.name
+                      ? "text-orange-500 scale-105 drop-shadow-[0_0_6px_rgba(255,140,0,0.7)]"
+                      : "text-gray-300"
+                  }`}
               >
                 {link.name}
                 {active === link.name && (
-                  <span className="ml-2 text-orange-500 font-mono text-base select-none drop-shadow-[0_0_4px_rgba(255,140,0,0.8)]">
+                  <span className="ml-2 text-orange-500 font-mono select-none drop-shadow-[0_0_4px_rgba(255,140,0,0.8)]">
                     {"</>"}
                   </span>
                 )}
@@ -90,7 +109,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Navbar (Top with Dropdown) */}
+      {/* ================= MOBILE NAVBAR ================= */}
       <nav className="md:hidden fixed top-0 left-0 w-full z-50 bg-black shadow-md">
         <div className="flex justify-between items-center px-4 py-3">
           <span className="text-lg font-bold text-orange-500">Rishika</span>
@@ -102,22 +121,23 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Dropdown Menu */}
         {isOpen && (
-          <div className="flex flex-col space-y-2 px-4 pb-4 bg-black">
+          <div className="flex flex-col space-y-3 px-4 pb-4 bg-black">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(link.name, link.href, e)}
-                className={`text-gray-300 font-medium transition duration-200
-                  hover:text-orange-400
-                  ${active === link.name ? "text-orange-500 drop-shadow-[0_0_6px_rgba(255,140,0,0.7)]" : ""}
-                `}
+                className={`font-medium transition
+                  ${
+                    active === link.name
+                      ? "text-orange-500 drop-shadow-[0_0_6px_rgba(255,140,0,0.7)]"
+                      : "text-gray-300 hover:text-orange-400"
+                  }`}
               >
-                <span>{link.name}</span>
+                {link.name}
                 {active === link.name && (
-                  <span className="ml-1 text-orange-500 font-mono text-sm select-none">
+                  <span className="ml-2 text-orange-500 font-mono text-sm select-none">
                     {"</>"}
                   </span>
                 )}

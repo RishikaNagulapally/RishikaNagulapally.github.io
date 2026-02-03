@@ -4,99 +4,116 @@ import { motion } from "framer-motion";
 const skillsData = [
   {
     category: "Web Development",
-    tagline: "I speak fluent HTML, CSS, and JavaScript!",
+    tagline: "Modern, scalable, and performance-focused web applications.",
     items: [
-      { name: "HTML5", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", border: "border-orange-500" },
-      { name: "CSS3", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", border: "border-blue-500" },
-      { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", border: "border-yellow-400" },
-      { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", border: "border-blue-400" },
-      { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", border: "border-cyan-400" },
-      { name: "Next.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg", border: "border-white" },
-      { name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", border: "border-green-500" },
-      { name: "TailwindCSS", img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", border: "border-cyan-500" },
-      { name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", border: "border-green-500" }
-    ]
+      { name: "HTML5", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS3", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Next.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" },
+      { name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "TailwindCSS", img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" },
+      { name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    ],
   },
   {
     category: "App Development",
-    tagline: "From iOS to Android, I've got you covered!",
+    tagline: "Cross-platform mobile apps with native performance.",
     items: [
-      { name: "Flutter", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg", border: "border-blue-400" },
-      { name: "React Native", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", border: "border-cyan-400" },
-      { name: "Kotlin", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg", border: "border-purple-500" },
-      { name: "Swift", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg", border: "border-orange-400" },
-      { name: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", border: "border-red-500" }
-    ]
+      { name: "Flutter", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+      { name: "React Native", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Kotlin", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+      { name: "Swift", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" },
+      { name: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    ],
   },
   {
-    category: "AI & ML",
-    tagline: "Teaching computers to think… sort of.",
+    category: "AI & Machine Learning",
+    tagline: "Building intelligent systems with data-driven models.",
     items: [
-      { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", border: "border-yellow-400" },
-      { name: "TensorFlow", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg", border: "border-orange-500" },
-      { name: "PyTorch", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg", border: "border-red-500" },
-      { name: "Keras", img: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg", border: "border-red-400" },
-      { name: "Scikit-learn", img: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg", border: "border-yellow-500" },
-      { name: "OpenCV", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg", border: "border-blue-400" }
-    ]
+      { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "TensorFlow", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+      { name: "PyTorch", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+      { name: "Keras", img: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg" },
+      { name: "Scikit-learn", img: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
+      { name: "OpenCV", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" },
+    ],
   },
   {
     category: "Design",
-    tagline: "Making things pretty, one pixel at a time.",
+    tagline: "User-centric design with clean visual systems.",
     items: [
-      { name: "Figma", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", border: "border-pink-500" },
-      { name: "Adobe XD", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg", border: "border-purple-500" },
-      { name: "Canva", img: "https://upload.wikimedia.org/wikipedia/commons/2/26/Canva_Logo.svg", border: "border-cyan-400" },
-      { name: "Photoshop", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg", border: "border-blue-500" },
-      { name: "Illustrator", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-line.svg", border: "border-orange-500" }
-    ]
-  }
+      { name: "Figma", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "Adobe XD", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" },
+      { name: "Canva", img: "https://upload.wikimedia.org/wikipedia/commons/2/26/Canva_Logo.svg" },
+      { name: "Photoshop", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" },
+      { name: "Illustrator", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-line.svg" },
+    ],
+  },
 ];
 
-const Skills = () => {
+export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-14 px-4 bg-gradient-to-b from-black via-[#1a1310] to-[#2b1a14] text-white transition-colors duration-500"
+      className="relative bg-black text-white py-24 px-6 sm:px-10 md:px-20 flex flex-col items-center overflow-hidden"
     >
+      {/* SECTION TITLE */}
       <motion.h2
-        className="text-center text-4xl font-bold mb-4"
-        initial={{ opacity: 0, y: -30 }}
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight"
       >
-        <span className="text-orange-500">&lt;Skills/&gt;</span> My TechStack
+        <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
+          Skills
+        </span>
+        <span className="block mt-3 w-20 h-[3px] mx-auto bg-white/40 rounded-full" />
       </motion.h2>
+
       <motion.p
-        className="text-center text-gray-300 max-w-2xl mx-auto mb-12"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center text-gray-400 max-w-2xl mb-14"
       >
-        A blend of technologies I’ve mastered, tools I adore, and a few I’m still learning (because tech never stops evolving! 🚀)
+        Technologies, frameworks, and tools I actively use to build scalable,
+        high-quality software solutions.
       </motion.p>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {/* SKILLS GRID */}
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full max-w-7xl">
         {skillsData.map((section, idx) => (
           <motion.div
             key={idx}
-            className="bg-gradient-to-b from-[#1c1310] to-[#241814] rounded-2xl shadow-lg p-6 border border-gray-700 hover:shadow-orange-500/30 hover:-translate-y-2 transition-transform duration-300 flex flex-col"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: idx * 0.1 }}
-            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.5, delay: idx * 0.08 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+            className="group rounded-3xl border border-white/10 bg-white/5 
+                       backdrop-blur-2xl shadow-[0_0_60px_rgba(0,0,0,0.65)] 
+                       p-6 flex flex-col"
           >
-            <h3 className="text-xl font-semibold mb-2 text-orange-500 text-center">
-              &lt;{section.category}/&gt;
+            <h3 className="text-xl font-bold mb-1 text-white text-center">
+              {section.category}
             </h3>
-            <p className="text-sm text-gray-400 text-center mb-4">{section.tagline}</p>
+            <p className="text-sm text-gray-400 text-center mb-5">
+              {section.tagline}
+            </p>
 
-            <div className="grid grid-cols-3 gap-3 mt-auto">
+            <div className="grid grid-cols-3 gap-4 mt-auto">
               {section.items.map((skill, i) => (
                 <motion.div
                   key={i}
-                  className={`flex justify-center items-center p-3 border-2 ${skill.border} rounded-xl bg-white hover:bg-gray-200 transition`}
-                  whileHover={{ scale: 1.08, rotate: -2 }}
+                  whileHover={{ scale: 1.08 }}
+                  className="flex items-center justify-center p-3 rounded-xl 
+                             bg-white/10 border border-white/10 
+                             hover:bg-white/15 transition"
+                  title={skill.name}
                 >
                   <img
                     src={skill.img}
@@ -112,6 +129,4 @@ const Skills = () => {
       </div>
     </section>
   );
-};
-
-export default Skills;
+}
